@@ -18,7 +18,7 @@ jobs:
       - run: pip install -r requirements.txt pytest
       
   docker:
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
